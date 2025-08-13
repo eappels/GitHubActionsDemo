@@ -5,9 +5,21 @@ name: Build .NET Maui Desktop app
 on:
   push:
     branches: [ "master" ]
+    paths-ignore:
+      - "**.md"
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+      - '**/*.yml'
   pull_request:
     branches: [ "master" ]
 
+env:
+  BUILD_VERSION: '0.1'
+  DOTNET_VERSION: 9.0.x
+  DOTNET_VERSION_TARGETS: net9.0
+  CSPROJ_TO_BUILD: GitHubActionsDemoApp/GitHubActionsDemoApp.csproj
+  PROJECT_FOLDER: GitHubActionsDemo
+  
 jobs:
 
   build:
