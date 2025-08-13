@@ -1,0 +1,14 @@
+name: Basic workflow
+
+on:
+  workflow_dispatch:
+jobs:
+  greet:
+    name: "Greetings Program!"
+
+  runs-on:
+    - ubuntu-latest
+
+  steps:
+    - name: Send greeting
+      run: echo "Hello"
